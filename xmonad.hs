@@ -78,8 +78,9 @@ myKeys c = mkKeymap c $
      ("M-e", spawn "emacs") ,
      --("M-e", spawn "emacsclient -c") ,
      ("M-t", spawn "transset .85") ,
-     ("M-k", spawn "setxkbmap -layout us -variant altgr-intl") ,
-     ("M-K", spawn "setxkbmap -layout de")
+     ("M-k", spawn "setxkbmap -layout us -variant altgr-intl & xmodmap ~/.Xmodmap") ,
+     ("M-K", spawn "setxkbmap -layout de & xmodmap ~/.Xmodmap") ,
+     ("M-S-k", spawn "setxkbmap dvorak & xmodmap ~/.Xmodmap")
    ]
 --   ++
 --   zip (map (\x -> fst x++[snd x]) ((zip (repeat "M-") (['1'..'9'])))) (map (withNthWorkspace W.greedyView) [0..])
